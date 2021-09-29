@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { SideBar, GenreResponseProps } from './components/SideBar';
 import { Content, MovieProps } from './components/Content';
+import { Header } from './components/Header';
 
 import { api } from './services/api';
 
@@ -42,9 +43,7 @@ export function App() {
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <SideBar genres={genres} handleClick={handleClickButton} selectedGenreId={selectedGenreId} />
       <div className="container">
-        <header>
-          <span className="category">Categoria:<span> {selectedGenre.title}</span></span>
-        </header>
+        <Header selectedGenre={selectedGenre}/>
 
         <main>
           <Content movies={movies} />
